@@ -14,6 +14,8 @@ class UserController extends Controller
 		$user->name = $request->name;
 		$user->email = $request->email;
 		$user->password = $request->password;
+		$user->age = $request->age;
+		$user->favorite_genre = $request->favorite_genre;
 		$user->save();
 
 		return response()->json([$user]);
@@ -44,12 +46,18 @@ class UserController extends Controller
 			if($request->password){
 				$user->password = $request->password;
 			}
+			if($request->age){
+				$user->age = $request->age;
+			}
+			if($request->favorite_genre){
+				$user->favorite_genre = $request->favorite_genre;
+			}
 
 			$user->save();
 			return response()->json([$user]);
 		}
 		else{
-			return response()->json(['Este user não existe']);
+			return response()->json(['Este usuario nao existe']);
 		}
 	}
 

@@ -15,7 +15,9 @@ class SerieController extends Controller
 		$serie->name = $request->name;
 		$serie->synopsis = $request->synopsis;
 		$serie->score = $request->score;
+    $serie->genre = $request->genre;
     $serie->user_id = $request->user_id;
+
 		$serie->save();
 
 		return response()->json([$serie]);
@@ -46,6 +48,9 @@ class SerieController extends Controller
 			if($request->score){
 				$serie->score = $request->score;
 			}
+      if($request->genre){
+				$serie->genre = $request->genre;
+			}
       if($request->user_id){
         $serie->user_id = $request->user_id;
       }
@@ -53,7 +58,7 @@ class SerieController extends Controller
       return response()->json([$serie]);
 		}
 		else{
-			return response()->json(['Esta serie não existe']);
+			return response()->json(['Esta serie nao existe']);
 		}
 	}
 

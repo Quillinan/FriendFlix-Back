@@ -28,4 +28,11 @@ Route::get('mostraSerie/{id}', 'SerieController@showSerie');
 Route::post('criaSerie', 'SerieController@createSerie');
 Route::put('atualizaSerie/{id}', 'SerieController@updateSerie');
 Route::delete('deletaSerie/{id}', 'SerieController@deleteSerie');
+
+
+Route::get('listaComments', 'CommentController@listComments');
+Route::get('mostraComment/{id}', 'CommentController@showComment');
+Route::post('criaComment', 'CommentController@createComment');
+Route::put('atualizaComment/{id}', 'CommentController@updateComment');
+Route::delete('deletaComment/{id}', 'CommentController@deleteComment');
 //

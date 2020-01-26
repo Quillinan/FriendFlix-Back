@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Serie;
+use App\Comment;
 
 class User extends Authenticatable
 {
@@ -40,5 +41,9 @@ class User extends Authenticatable
 
     public function series(){
       return $this->hasMany('App\Serie');
+    }
+
+    public function comments(){
+      return $this->hasMany('App\Comment');
     }
 }
